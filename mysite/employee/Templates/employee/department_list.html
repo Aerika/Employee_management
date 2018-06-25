@@ -1,0 +1,31 @@
+{% load static %}<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Department</title>
+  </head>
+  <body>
+      <h1>Department</h1>
+      <input type="button" onclick="location.href='/add/';" value="Add" />
+      <input type="button" onclick="location.href='/d-edit/';" value="Edit" />
+      <input type="button" onclick="location.href='/d-delete/';" value="Delete" />
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Department</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in department %}
+          <tr>
+            <td>
+              {{ i.name }}<br>
+                          </td>
+
+          </tr>
+        {% endfor %}
+      </tbody>
+
+    </table>
+  </body>
+</html>

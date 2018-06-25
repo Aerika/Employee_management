@@ -1,0 +1,44 @@
+{% load static %}<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Employee</title>
+
+  </head>
+  <body>
+      <h1>Employee</h1>
+      <input type="button" onclick="location.href='/create/';" value="Add" />
+       <input type="button" onclick="location.href='/edit/';" value="Edit" />
+     <input type="button" onclick="location.href='/delete/';" value="Delete" />
+
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th>name</th>
+          <th>surname</th>
+          <th>address</th>
+          <th>qualification</th>
+            <th>contact_number</th>
+            <th>department</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in employee %}
+          <tr>
+            <td>
+              {{ i.employee_name }}<br>
+
+            </td>
+            <td> {{ i.surname }}<br></td>
+            <td> {{ i.address }}<br></td>
+            <td>{{ i.qualification }}<br></td>
+              <td>{{ i.contact_num }}<br></td>
+              <td>{{ i.department }}<br></td>
+
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
